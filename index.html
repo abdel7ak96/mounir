@@ -667,28 +667,28 @@
               </defs>
             </svg>
           </div>
-          <div class="tabButtons a5 a4 a9 a3v">
+          <div class="tabButtons tabButtons_0 a5 a4 a9 a3v">
             <button
               class="a4 a1x a21 a1D a3w aE aF a1K hover:a28 hover:aH dark:a1z[#4B4E56] dark:aI dark:hover:a28 lg:a3x lg:a3y"
-              onclick="showPanel(0)"
+              onclick="showPanel(0, '0')"
             >
               EKO - Agence de Marketing Digital
             </button>
             <button
               class="a4 a1x a21 a1D a3w aE aF a1K hover:a28 hover:aH dark:a1z[#4B4E56] dark:aI dark:hover:a28 lg:a3x lg:a3y"
-              onclick="showPanel(1)"
+              onclick="showPanel(1, '0')"
             >
               Un business a besoin de publicité
             </button>
             <button
               class="a4 a1x a21 a1D a3w aE aF a1K hover:a28 hover:aH dark:a1z[#4B4E56] dark:aI dark:hover:a28 lg:a3x lg:a3y"
-              onclick="showPanel(2)"
+              onclick="showPanel(2, '0')"
             >
               Pourquoi Nous
             </button>
           </div>
           <div class="a4">
-            <div class="tabPanel panel_1">
+            <div class="tabPanel panel_0">
               <div class="a1R a5 a6 a9 a1u[70px]">
                 <div class="a4 a1v lg:a1S/2">
                   <div class="ac a3h a2O ah[490px] ae[600px] lg:a2g">
@@ -755,7 +755,7 @@
                 </div>
               </div>
             </div>
-            <div class="tabPanel panel_1">
+            <div class="tabPanel panel_0">
               <div class="a1R a5 a6 a9 a1u[70px]">
                 <div class="a4 a1v lg:a1S/2">
                   <div class="ac a3h a2O ah[490px] ae[600px] lg:a2g">
@@ -825,7 +825,7 @@
                 </div>
               </div>
             </div>
-            <div class="tabPanel panel_1">
+            <div class="tabPanel panel_0">
               <div class="a1R a5 a6 a9 a1u[70px]">
                 <div class="a4 a1v lg:a1S/2">
                   <div class="ac a3h a2O ah[490px] ae[600px] lg:a2g">
@@ -957,28 +957,28 @@
               </defs>
             </svg>
           </div>
-          <div class="tabButtons a5 a4 a9 a3v">
+          <div class="tabButtons tabButtons_1 a5 a4 a9 a3v">
             <button
               class="a4 a1x a21 a1D a3w aE aF a1K hover:a28 hover:aH dark:a1z[#4B4E56] dark:aI dark:hover:a28 lg:a3x lg:a3y"
-              onclick="showPanel2(0)"
+              onclick="showPanel(0, '1')"
             >
-              EKO - Agence de Marketing Digital
+              Notre mission
             </button>
             <button
               class="a4 a1x a21 a1D a3w aE aF a1K hover:a28 hover:aH dark:a1z[#4B4E56] dark:aI dark:hover:a28 lg:a3x lg:a3y"
-              onclick="showPanel2(1)"
+              onclick="showPanel(1, '1')"
             >
-              Un business a besoin de publicité
+              Plan marketing digital
             </button>
             <button
               class="a4 a1x a21 a1D a3w aE aF a1K hover:a28 hover:aH dark:a1z[#4B4E56] dark:aI dark:hover:a28 lg:a3x lg:a3y"
-              onclick="showPanel2(2)"
+              onclick="showPanel(2, '1')"
             >
-              Pourquoi Nous
+              Contenu de qualité
             </button>
           </div>
           <div class="a4">
-            <div class="tabPanel panel_2">
+            <div class="tabPanel panel_1">
               <div class="a1R a5 a6 a9 a1u[70px]">
                 <div class="a4 a1v lg:a1S/2">
                   <div class="ac a3h a2O ah[490px] ae[600px] lg:a2g">
@@ -1053,7 +1053,7 @@
                 </div>
               </div>
             </div>
-            <div class="tabPanel panel_2">
+            <div class="tabPanel panel_1">
               <div class="a1R a5 a6 a9 a1u[70px]">
                 <div class="a4 a1v lg:a1S/2">
                   <div class="ac a3h a2O ah[490px] ae[600px] lg:a2g">
@@ -1128,7 +1128,7 @@
                 </div>
               </div>
             </div>
-            <div class="tabPanel panel_2">
+            <div class="tabPanel panel_1">
               <div class="a1R a5 a6 a9 a1u[70px]">
                 <div class="a4 a1v lg:a1S/2">
                   <div class="ac a3h a2O ah[490px] ae[600px] lg:a2g">
@@ -2586,11 +2586,10 @@
       }
 
       window.document.addEventListener('scroll', onScroll);
-      // ==== About Tabs
-      const tabButtons = document.querySelectorAll('.tabButtons button');
-      const tabPanels = document.querySelectorAll('.panel_1');
-
-      function showPanel(panelIndex) {
+      
+      function showPanel(panelIndex, section_id) {
+        const tabButtons = document.querySelectorAll(`.tabButtons_${section_id} button`);
+        const tabPanels = document.querySelectorAll(`.panel_${section_id}`);
         tabButtons.forEach(function (node) {
           node.classList.remove('aH', 'a28', 'dark:a28');
         });
@@ -2605,26 +2604,8 @@
         });
         tabPanels[panelIndex].style.display = 'flex';
       }
-      showPanel(0);
-
-      const tabButtons2 = document.querySelectorAll('.tabButtons button');
-      const tabPanels2 = document.querySelectorAll('.panel_2');
-      function showPanel2(panelIndex) {
-        tabButtons2.forEach(function (node) {
-          node.classList.remove('aH', 'a28', 'dark:a28');
-        });
-        tabButtons2[panelIndex].classList.add(
-          'aH',
-          'dark:aI',
-          'a28',
-          'dark:a28'
-        );
-        tabPanels2.forEach(function (node) {
-          node.style.display = 'none';
-        });
-        tabPanels2[panelIndex].style.display = 'flex';
-      }
-      showPanel2(0);
+      showPanel(0, '0');
+      showPanel(0, '1');
 
       //========= testimonial
       tns({
