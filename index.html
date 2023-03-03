@@ -38,84 +38,49 @@
                 <li>
                   <a
                     href="#home"
-                    class="menu-scroll active aD a9 am az aE aF aG hover:aH dark:hover:aI"
+                    class="menu-scroll aD a9 am az aE aF aG hover:aH dark:hover:aI"
                   >
                     Home
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#features"
+                    href="#nos-services"
                     class="menu-scroll aD a9 am az aE aF aG hover:aH dark:hover:aI"
                   >
-                    Features
+                    Nos services
                   </a>
-                </li>
-                <li class="submenu-item aJ ac">
-                  <a
-                    href="javascript:void(0)"
-                    class="submenu-taggler aD a9 am az aE aF aG hover:aH dark:hover:aI"
-                  >
-                    Pages
-                    <span class="aK">
-                      <svg width="14" height="8" viewBox="0 0 14 8" class="aL">
-                        <path
-                          d="M6.54564 5.09128L11.6369 0L13.0913 1.45436L6.54564 8L0 1.45436L1.45436 0L6.54564 5.09128Z"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <ul
-                    class="submenu ag ay aM aN aO lg:aP lg:a1 lg:aQ[120%] lg:ai lg:aR[350px] lg:aS lg:aT lg:an lg:aU lg:aV lg:aW lg:aX lg:group-hover:ap lg:group-hover:aY lg:group-hover:av dark:lg:aZ dark:lg:a_[#2C3443]"
-                  >
-                    <li>
-                      <a
-                        href="blog-grids.html"
-                        class="aD a9 am az aE aF aG hover:aH dark:hover:aI"
-                      >
-                        Blog Grids
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="blog-details.html"
-                        class="aD a9 am az aE aF aG hover:aH dark:hover:aI"
-                      >
-                        Blog Details
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="404.html"
-                        class="aD a9 am az aE aF aG hover:aH dark:hover:aI"
-                      >
-                        404 Error
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="signin.html"
-                        class="aD a9 am az aE aF aG hover:aH dark:hover:aI"
-                      >
-                        Sign In
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="signup.html"
-                        class="aD a9 am az aE aF aG hover:aH dark:hover:aI"
-                      >
-                        Sign Up
-                      </a>
-                    </li>
-                  </ul>
                 </li>
                 <li>
                   <a
-                    href="#support"
+                    href="#presentation"
                     class="menu-scroll aD a9 am az aE aF aG hover:aH dark:hover:aI"
                   >
-                    Support
+                    Presentation
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#testimonial"
+                    class="menu-scroll aD a9 am az aE aF aG hover:aH dark:hover:aI"
+                  >
+                    Témoignages
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#brands"
+                    class="menu-scroll aD a9 am az aE aF aG hover:aH dark:hover:aI"
+                  >
+                    Clients
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="menu-scroll aD a9 am az aE aF aG hover:aH dark:hover:aI"
+                  >
+                    Contact
                   </a>
                 </li>
               </ul>
@@ -1655,7 +1620,7 @@
       </div>
     </section>
 
-    <footer class="wow fadeInUp a1P sm:a1Q lg:a1u[130px]" data-wow-delay=".2s">
+    <footer id="contact" class="wow fadeInUp a1P sm:a1Q lg:a1u[130px]" data-wow-delay=".2s">
       <div class="a1v xl:a1w">
         <div class="a1R a5 a6">
           <div class="a4 a1v sm:a1S/2 md:a1p/12 lg:a1T/12 xl:a1T/12">
@@ -1760,7 +1725,7 @@
                     href="#testimonial"
                     class="aE aF aG hover:aH dark:hover:aI"
                   >
-                    Ce que nos clients disent de nous
+                    Témoignages
                   </a>
                 </li>
                 <li>
@@ -1768,7 +1733,7 @@
                     href="#brands"
                     class="aE aF aG hover:aH dark:hover:aI"
                   >
-                    Ils nous ont fait confiance
+                    Clients
                   </a>
                 </li>
               </ul>
@@ -1859,7 +1824,7 @@
           const currLink = sections[i];
           const val = currLink.getAttribute('href');
           const refElement = document.querySelector(val);
-          const scrollTopMinus = scrollPos + 73;
+          const scrollTopMinus = scrollPos + 82;
           if (
             refElement.offsetTop <= scrollTopMinus &&
             refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
@@ -1872,7 +1837,7 @@
         }
       }
 
-      window.document.addEventListener('scroll', onScroll);
+      // window.document.addEventListener('scroll', onScroll);
       
       function showPanel(panelIndex, section_id) {
         const tabButtons = document.querySelectorAll(`.tabButtons_${section_id} button`);
