@@ -4,7 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--====== OPENGRAPH TAGS START ======-->
+    <!-- title -->
     <title>EKŌ - Agence Digital</title>
+    <meta property="og:title" content="EKŌ - Agence Digital" />
+    <meta name="twitter:title" content="EKŌ - Agence Digital" />
+    <!-- url -->
+    <meta property="og:url" content="http://eko-agency.net/" />
+    <meta name="twitter:url" content="http://eko-agency.net/" />
+    <!-- description -->
+    <meta name="description" content="Nous sommes une agence créative spécialisée dans la stratégie, le contenu et la publicité en ligne." />
+    <meta property="og:description" content="Nous sommes une agence créative spécialisée dans la stratégie, le contenu et la publicité en ligne." />
+    <meta name="twitter:description" content="Nous sommes une agence créative spécialisée dans la stratégie, le contenu et la publicité en ligne." />
+    <!-- cover image -->
+    <meta property="og:image" content="images/og_cover.jpeg" />
+    <meta name="twitter:image" content="images/og_cover.jpeg" />
+    <!-- type -->
+    <meta property="og:type" content="webapp" />
+    <meta name=”twitter:card” content=”webapp” />
+    <!--====== OPENGRAPH TAGS END ======-->
 
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
 
@@ -1545,6 +1564,9 @@
     <script src="js/main.js"></script>
     <script>
       // section menu active
+
+      document.body.style.overflow = "visible";
+
       function onScroll(event) {
         const sections = document.querySelectorAll('.menu-scroll');
         const scrollPos =
@@ -1556,20 +1578,20 @@
           const currLink = sections[i];
           const val = currLink.getAttribute('href');
           const refElement = document.querySelector(val);
-          const scrollTopMinus = scrollPos + 82;
+          const scrollTopMinus = scrollPos;
           if (
             refElement.offsetTop <= scrollTopMinus &&
             refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
           ) {
             document.querySelector('.menu-scroll').classList.remove('active');
-            currLink.classList.add('active');
+            // currLink.classList.add('active');
           } else {
-            currLink.classList.remove('active');
+            // currLink.classList.remove('active');
           }
         }
       }
-
-      // window.document.addEventListener('scroll', onScroll);
+      
+      window.document.addEventListener('scroll', onScroll);
 
       function showPanel(panelIndex, section_id) {
         const tabButtons = document.querySelectorAll(
